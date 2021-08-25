@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,400;1,500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app">
+        <div class="name_app">  
+            <img src="./images/logo.svg" alt="">
+        </div>
+        <div class="box_wrapped">
+            <div class="box-tip_input">
+                <div class="box-tip_title">
+                    <span>Bill</span>
+
+                </div>
+                <div class="box-tip_bill">
+                    <div class="bill_input" >
+                        <label class="bill_sign">
+                            <input placeholder="0"  class ="bill-user_type" type="text">
+                        </label>
+                    </div>
+                    <div class="bill_tip">
+                        <span class="bill-tip_intro">Select Tip % </span>
+                        <div class="bill-tip_percent">
+                            <div class="bill-tip_item active"  data-percent="5">
+                                <span class="bill-tip_title">
+                                    5%
+                                </span>
+                            </div>
+
+                            <div data-="" class="bill-tip_item" data-percent="10">
+                                <span class="bill-tip_title">
+                                    10%
+                                </span>
+                            </div>
+                            <div class="bill-tip_item" data-percent="15">
+                                <span class="bill-tip_title">
+                                    15%
+                                </span>
+                            </div>
+                            <div class="bill-tip_item" data-percent="25">
+                                <span class="bill-tip_title">
+                                    25%
+                                </span>
+                            </div>
+                            <div class="bill-tip_item" data-percent="50">
+                                <span class="bill-tip_title">
+                                    50%
+                                </span>
+                            </div>
+                            <div class="bill-tip_item">
+                                <input placeholder="custom" type="number" class="bill-custom">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bill-tip_people">
+                         <div class="bill-people_name">
+                         <span >Number of People</span>
+                        <span class="bill-message_title"  >Can't be zero</span>   
+                        </div>
+                        <div class="bill-people_input">
+                            <label>
+                                <input placeholder="0"  type="text">
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="box-tip_result">
+                <div class="box-result_wrap">
+                    <div class="box-result-top">
+
+                        <div class="box-result_tipamount">
+                            <p>Tip Amount</p>
+                            <span>/ person</span>
+                        </div>
+                        <div class="box-result_tip">
+                            <span class="tip">$4.27</span>
+                        </div>
+                    </div>
+                    <div class="box-result-bot">
+                        <div class="box-result_tipamount">
+                            <p>Total</p>
+                            <span>/ person</span>
+                        </div>
+                        <div class="box-result_tip">
+                            <span class="total">$32.79</span>
+                        </div>
+                    </div>
+                    <div class="box-reuslt_button">
+                        <button  disabled > Reset</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./js/index.js"></script>
+</html>

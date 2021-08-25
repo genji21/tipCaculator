@@ -1,0 +1,230 @@
+$primary-color:hsl(185, 41%, 84%);
+$dark-cyan:hsl(183, 100%, 15%);
+$white-color: hsl(0, 0%, 100%);
+$strong-cyan : hsl(172,67%,45%);
+$very-dark-cyan:hsl(183,100%,15%);
+@mixin icon_center{
+    position:absolute;
+    top:100%;
+    transform: translateY(-60%);
+    left:10px;
+    width:100%;
+    height: 100%;
+    content:''
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+body{
+    font-family: "Poppins",sans-serif;
+}
+input{
+    width: 100%;
+    height: 100%;
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+.app{
+    background-color: $primary-color;
+    height: 100vh;
+    font-size: 24px;
+    .name_app{
+        padding-top:5%;
+       img{
+           display: block;
+           margin:0 auto;
+           margin-bottom: 10%;
+       }
+    }
+    .box_wrapped{
+        background-color: $white-color;
+        width: 50%;
+        display: flex;
+        padding:30px 20px;
+        justify-content: space-between;
+        margin:0 auto;
+        border-radius: 20px;
+        box-shadow: 1px 1px 5px 3px  grey;
+        & .box-tip_input{
+            &>.box-tip_title{
+                
+                margin-bottom: 10px;
+            }
+            & .bill_sign{
+                position: relative;
+                &::before{
+                   @include icon_center;
+                    background-repeat: no-repeat;
+                    background-image: url(./images/icon-dollar.svg);
+                }
+                >  input{
+                    text-align: end;
+                    padding: 10px 10px 10px;
+                    font-size: 1.5rem;
+
+                    &:focus{
+                        border:1px solid $strong-cyan;
+                        outline:none;   
+                        font-weight: 700;
+                        color: $very-dark-cyan;
+                    }
+                }
+            }       
+            //box 2 
+            & .box-tip_bill{
+            & .bill_tip{
+                margin: 30px 0;
+                & .bill-tip_intro{
+                    margin: 10px 0 ;
+                    display: block;
+                    font-size: 0.8em;
+                    color: $dark-cyan;
+                }
+                 .bill-tip_percent{
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    .bill-tip_item{
+                        width: calc(33.33% - 10px) ;
+                        text-align: center;
+                        color: white;
+                        font-weight: 800;
+                        margin-bottom: 16px;
+                        //item active
+                       
+                        &:not(:last-child){
+                            background-color: $very-dark-cyan;
+                            padding:10px 20px;
+                            text-align: center;
+                           
+                        }
+                        &.active{
+                            background-color: $strong-cyan;
+                        }
+                       &:last-child input{
+                           text-align: center;
+                       }
+                      &:hover{
+                          background-color: $strong-cyan;
+                          cursor: pointer;
+                          color: $dark-cyan;
+
+                      }
+                       
+                        span{
+                            font-size: 0.8em;
+                        }
+                    }
+                }
+            }
+            }  
+            & .bill-tip_people{
+                font-size: 0.8em;
+                color:$dark-cyan;
+                & .bill-people_name{
+                    display: flex;
+                    justify-content: space-between;
+                    & span:nth-child(2){
+                        color:Red;
+                        font-weight: 300;
+                        display: none;
+                    }
+                   
+                }
+                & label{
+                    position: relative;
+                    &::before{
+                        @include icon_center;
+                        background-image: url(./images/icon-person.svg);
+                        background-repeat: no-repeat;
+                    }
+                }
+               
+                & input{
+                    text-align: end;
+                    padding: 10px 10px 10px;
+                    
+                   }
+            }
+        }
+          
+        
+        & .box-tip_result{
+            background-color:$very-dark-cyan;
+            padding:20px;
+            font-size: 0.8em;
+            .box-result_wrap{
+                .box-result-top,.box-result-bot{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    & p{
+                        color:hsl(185, 41%, 84%);
+                        
+                    }
+                    & p+span{
+                        font-size: 0.7rem;
+                        color: hsl(184, 20%, 49%);
+                    }
+                    .box-result_tip span{
+                        font-size: 2rem;
+                        color:$strong-cyan;
+                        font-weight: 800;
+                    }
+                }
+                .box-result-bot{
+                    margin: 20px 0 10rem 0 ;
+                }
+              
+                .box-reuslt_button button{
+                    width: 100%;
+                    background-color: $strong-cyan;
+                    padding: 10px;
+                    border-radius: 15px;
+                }
+            }
+        }
+    }
+}
+.box-tip_result,.box-tip_input{
+    width: calc(50% - 24px);
+}
+
+
+
+@media screen and (max-width : 1339px) {
+   .app .box_wrapped{
+        width: 100%;
+        display: block;
+        & .box-tip_input{
+            width: 100%;
+           & .bill-tip_percent{
+              & .bill-tip_item{
+                }
+            }
+        }
+        
+    }
+    .app .box_wrapped .box-tip_input .box-tip_bill .bill_tip .bill-tip_percent .bill-tip_item {
+        width: calc(50% - 10px);
+
+    }
+    .app .box_wrapped .box-tip_result{
+        width: 100%;
+        border-radius: 10px;
+    }
+    .bill-people_input{
+        margin-bottom: 15px;
+    }
+    .app .box_wrapped .box-tip_result .box-result_wrap .box-result-top .box-result_tip span, .app .box_wrapped .box-tip_result .box-result_wrap .box-result-bot .box-result_tip span {
+        font-size: 1rem;
+        color: #26c0ab;
+        font-weight: 800;
+    }
+}
